@@ -8,6 +8,8 @@ import Question from "./questions";
 import "./App.css";
 import { useState } from "react";
 
+
+
 function App() {
   let history = useHistory();
   const [error, setError] = useState("");
@@ -16,14 +18,11 @@ function App() {
     event.preventDefault();
 
     if (error === " ") {
-      console.log("starting");
-
       history.push({
         pathname: "/Questions",
       });
     } else {
       window.alert("Please Register First");
-      console.log("not starting");
     }
   }
 
@@ -77,6 +76,15 @@ export default function registration() {
         <Switch>
           <Route path="/" exact component={App} />
           <Route path="/Questions" exact component={Question} />
+          <Route path="/country">
+            <Question />
+          </Route>
+          <Route path="/movie">
+            <Question />
+          </Route>
+          <Route path="/music">
+            <Question />
+          </Route>
         </Switch>
       </Router>
     </div>
